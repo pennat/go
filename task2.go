@@ -16,5 +16,5 @@ func main() {
 
 	fmt.Println("Диаметр окружности:", d)
 
-	fmt.Println("Радиус окружности:", d/2)
+	fmt.Println("Длина окружности:", pi*d)
 }
