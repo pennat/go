@@ -7,14 +7,13 @@ import (
 
 func main() {
 	var sqr float64
-	pi := math.Pi
 
 	fmt.Println("Введите площадь круга")
 	fmt.Scanln(&sqr)
 
-	d := math.Sqrt(sqr / pi)
+	d := 2 * math.Sqrt(sqr / math.Pi)
 
 	fmt.Println("Диаметр окружности:", d)
 
-	fmt.Println("Длина окружности:", pi*d)
+	fmt.Println("Длина окружности:", math.Pi*d)
 }
