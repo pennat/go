@@ -28,10 +28,11 @@ func main() {
 
 func insertSort(arr []int, len int) {
 	for i := 1; i < len; i++ {
-		for x := 0; x < i; x++ {
-			if arr[x] > arr[i] {
-				arr[x], arr[i] = arr[i], arr[x]
-			}
+		x := i
+		y := arr[i]
+		for ; x > 0 && arr[x-1] > y; x-- {
+			arr[x] = arr[x-1]
 		}
+		arr[x] = y
 	}
 }
