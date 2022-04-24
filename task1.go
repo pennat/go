@@ -10,14 +10,19 @@ func main() {
 	var a, b, res float64
 	var op string
 
-	fmt.Println("Введите первое число:")
-	fmt.Scanln(&a)
-
-	fmt.Println("Введите второе число:")
-	fmt.Scanln(&b)
-
 	fmt.Println("Введите арифметическую операцию (+, -, *, /, !, ^): ")
 	fmt.Scanln(&op)
+	
+	if op != "!" {
+		fmt.Println("Введите первое число:")
+		fmt.Scanln(&a)
+
+		fmt.Println("Введите второе число:")
+		fmt.Scanln(&b)
+	} else {
+		fmt.Println("Введите число:")
+		fmt.Scanln(&a)
+	}
 
 	switch op {
 	case "+":
@@ -27,11 +32,11 @@ func main() {
 	case "*":
 		res = a * b
 	case "/":
-		res = a / b
 		if b == 0 {
 			fmt.Println("Делить на ноль нельзя")
 			os.Exit(1)
 		}
+		res = a / b
 	case "!":
 		res = factorial(a)
 	case "^":
